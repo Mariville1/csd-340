@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+
+div.left-div, div.right-div {
+    width: 45%;
+}
+
+div.last-div {
+    width: 100%;
+}
+
+div.last-div {
+    margin-top: 60px;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+ul, ol {
+    font-weight: 300;
+}
+    
+ol {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style: number;
+    list-style-position: inside;
+}
+
+ul {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style: upper-roman;
+    list-style-position: inside;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+div.bottom-div {
+    float: right;
+    margin-bottom: 20px;
+}
