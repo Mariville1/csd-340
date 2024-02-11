@@ -1,0 +1,120 @@
+<!-- Marie Battle, Assignment 12.2: Javascript Part 4 -->
+<!DOCTYPE html>
+<html lang=“en”>
+<html>
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" type="text/css" href="Battle1_Mod3_3.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div.left-div, div.right-div {
+            width: 45%;
+        }
+
+        div.last-div {
+            width: 100%;
+        }
+
+        div.last-div {
+            margin-top: 60px;
+        }
+
+        h3 {
+            font-weight: 500;
+        }
+
+        .red-dashed {
+            border: 1px dashed red;
+            border-radius: 15px;
+            padding: 10px;
+            list-style: none;
+        }
+
+        .red-dashed li {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul {
+            font-weight: 300;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        div.bottom-div {
+            float: right;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        var bookTitles = [
+            "Vengeance",
+            "Nervous",
+            "Frederick Douglas",
+            "The Color Purple",
+            "Shakespheare",
+            "A Love Of My Own",
+            "Addicted",
+            "APF",
+            "Heat",
+            "True To The Game"
+        ];
+
+        function displayAscending() {
+            var sortedTitles = bookTitles.slice().sort();
+            var output = document.getElementById("output");
+            output.innerHTML = sortedTitles.join("<br>");
+        }
+
+        function displayDescending() {
+            var sortedTitles = bookTitles.slice().sort().reverse();
+            var output = document.getElementById("output");
+            output.innerHTML = sortedTitles.join("<br>");
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 12.2: JavaScript - Part 4</h1>
+        <div style="display: flex;">
+            <div style="width: 45%;">
+                <h3>Top 10 Favorite Books</h3>
+                <ol class="red-dashed">
+                    <li>Vengeance</li>
+                    <li>Nervous</li>
+                    <li>Frederick Douglas</li>
+                    <li>The Color Purple</li>
+                    <li>Shakespheare</li>
+                    <li>A Love Of My Own</li>
+                    <li>Addicted</li>
+                    <li>APF</li>
+                    <li>Heat</li>
+                    <li>True To The Game</li>
+                </ol>
+            </div>
+            <div style="width: 45%;">
+                <h3>5 Things I've Learned Since the Course Started</h3>
+                <ul class="red-dashed">
+                    <li>Learning HTML and CSS</li>
+                    <li>Creating Webpages</li>
+                    <li>100 Thing You Should Know About People</li>
+                    <li>TLearning Python for CSS files</li>
+                    <li>Using Different Apps to create HTML and CSS Files</li>
+                </ul>
+            </div>
+        </div>
+        <button onclick="displayAscending()">Top to Bottom</button>
+        <button onclick="displayDescending()">Bottom to Top</button>
+        <div id="output"></div>
+    </div>
+    <div class="bottom-div">
+        <a href="index.html" style="float: right;">Back to Landing Page</a>
+        <a href="https://mariville1.github.io/csd-340/" style="float:left;">Back to Portal</a>
+    </div>
+</body>
+</html>
