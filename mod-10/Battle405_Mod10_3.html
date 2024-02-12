@@ -1,75 +1,50 @@
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'
-  'http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd'>
-
-<html xmlns='http://www.w3.org/1999/xhtml'>
-<!--
-      Marie Battle
-       Assignment 10.3
--->
-  <head>
-    <title>
-      Example 10
-    </title>
-    <script>
-      function displayImage(imageFile){
-        var largerImage = document.getElementById("mainImage");
-        var newNode = document.createElement("img");
-        newNode.id = "mainImage";
-        newNode.src = imageFile;
-        newNode.alt = "Large Image";
-        newNode.className = "mainImage";
-        newNode.style.width = "300px";
-        newNode.style.height = "200px";
-        largerImage.parentNode.replaceChild(newNode, largerImage);
-      }
-    </script>
-
+<!-- Marie Battle, 10.3_Assignment: JavaScript Exercise, Part 3 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color and Image Change</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-      
-      div {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      
-      img {
-        width: 200px;
-        height: 150px;
-        border: 0;
-        cursor: pointer;
-      }
-      
-      div:hover {
-        color: red;
-      }
+        .pink {
+            color: pink;
+        }
+
+        .purple {
+            color: purple;
+        }
+
+        .yellow {
+            color: yellow;
+        }
     </style>
+    <script>
+        function changeColor(color) {
+            var text = document.getElementById("text");
+            text.className = color;
+        }
 
-  </head>
+        function changeImage(image) {
+            var mainImage = document.getElementById("mainImage");
+            mainImage.src = image;
+        }
+    </script>
+</head>
+<body>
+    <h1>Color and Image Change</h1>
+    <p id="text">Run your mouse over the buttons to change the color and image.</p>
 
-  <body>
-    <br />
-    <div>
-      <img src="olivia.jpeg" alt="Olivia Image" onmouseover="displayImage('olivia.jpeg');">
-    </div>
-    <br />
-    <div>
-      Run your mouse over the image to change.
-      <br />
-    </div>
-    <div>
-      <img src="hobby1.jpeg" alt="Hobby 1 Image" onmouseover="displayImage('hobby1.jpeg');">
-    </div>
-    <br />
-    <div>
-      Run your mouse over the image to change.
-      <br />
-      Right-click and select View Source for more details.
-    </div>
+    <button onmouseover="changeColor('pink')" onmouseout="changeColor('')">Pink</button>
+    <button onmouseover="changeColor('purple')" onmouseout="changeColor('')">Purple</button>
+    <button onmouseover="changeColor('yellow')" onmouseout="changeColor('')">Yellow</button>
 
-  </body>
+    <br><br>
 
+    <img id="mainImage" src="martin1.jpg" alt="Image">
+
+    <br><br>
+
+    <button onclick="changeImage('martin1.jpg')">Image 1</button>
+    <button onclick="changeImage('martin2.jpg')">Image 2</button>
+    <button onclick="changeImage('martin3.jpg')">Image 3</button>
+    <button onclick="changeImage('martin4.jpg')">Image 4</button>
+</body>
 </html>
